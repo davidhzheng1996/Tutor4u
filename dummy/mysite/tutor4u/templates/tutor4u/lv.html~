@@ -1,0 +1,99 @@
+{% extends url 'tutor4u/base.html' %}
+ 
+
+{% block body %}
+    <div class="container">
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+          
+
+      <div class="row featurette">
+        <div class="col-md-9 col-md-push-3">
+          <h2 class="featurette-heading">Fangge Dong <span class="text-muted">No. 1 Tutor of the week</span></h2>
+          <p class="lead">Fangge is the hottest tutor of the week.</p>
+        </div>
+        <div class="col-md-3 col-md-pull-9">
+                     <img class="img-circle" src="https://i.ytimg.com/vi/oZCdd5pjP80/maxresdefault.jpg" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+          
+
+      </div>
+         
+        
+        
+        
+        
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+          
+
+      <div class="row featurette">
+        <div class="col-md-9 col-md-push-3">
+          <h2 class="featurette-heading">David Zheng <span class="text-muted">No. 2 Tutor of the week</span></h2>
+          <p class="lead">David is a genius.</p>
+        </div>
+        <div class="col-md-3 col-md-pull-9">
+                     <img class="img-circle" src="https://i.ytimg.com/vi/oZCdd5pjP80/maxresdefault.jpg" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+          
+    
+       
+      </div>
+        
+        
+        
+        
+       <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+          
+
+      <div class="row featurette">
+        <div class="col-md-9 col-md-push-3">
+          <h2 class="featurette-heading">Morton Mo <span class="text-muted">No. 3 Tutor of the week</span></h2>
+          <p class="lead">Mortono is the smartest guy in the world!</p>
+        </div>
+        <div class="col-md-3 col-md-pull-9">
+                     <img class="img-circle" src="https://i.ytimg.com/vi/oZCdd5pjP80/maxresdefault.jpg" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+          
+    
+      
+      </div>
+        
+        
+        
+        
+        
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+          
+
+      <div class="row featurette">
+        <div class="col-md-9 col-md-push-3">
+          <h2 class="featurette-heading">Zihui Liu <span class="text-muted">No. 4 Tutor of the week</span></h2>
+          <p class="lead">Have fun with Zihui!</p>
+        </div>
+        <div class="col-md-3 col-md-pull-9">
+                     <img class="img-circle" src="https://i.ytimg.com/vi/oZCdd5pjP80/maxresdefault.jpg" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+          
+      </div>
+
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ {% endblock %}

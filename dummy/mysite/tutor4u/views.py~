@@ -1,0 +1,76 @@
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from .models import Question, User, Choice
+from django.template import loader
+from django.urls import reverse
+from .forms import PostForm
+
+# Create your views here
+def index(request):
+    return render(request, 'tutor4u/index.html')
+
+def signup_complete(request):
+    return render(request, 'tutor4u/signup_complete.html')
+
+def detail(request, question_id):
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+    return render(request, 'tutor4u/detail.html', {'question': question})
+
+def results(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    return render(request,'tutor4u/results.html',{'user': user})
+
+def vote(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        text = request.POST['test']
+        print(text)
+    except (KeyError, Choice.DoesNotExist):
+        # Redisplay the question voting form.
+        return render(request, 'tutor4u/detail.html', {
+
+            'question': question,
+            'error_message': "You didn't select a choice.",
+        })
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('tutor4u:results', args=(question.id,)))
+
+def signup(request): 
+    
+    return render(request, 'tutor4u/sign2.html')
+
+def signup_action(request):
+    print(request.POST)
+    q=User(name=request.POST['user_name'],email=request.POST['user_email'],password=request.POST['user_password'],gender=request.POST['user_gender'],biography=request.POST['user_bio'],major=request.POST['user_major'],currentyear=request.POST['currentyear'])
+    q.save()
+    print(q.id)
+    return HttpResponseRedirect(reverse('tutor4u:results',args=(q.id,)))
+
+def form_upload(request):
+    if request.method == 'GET':
+        form = PostForm()
+    else:
+        # A POST request: Handle Form Upload
+        form = PostForm(request.POST) # Bind data from request.POST into a PostForm
+ 
+        # If data is valid, proceeds to create a new post and redirect the user
+        if form.is_valid():
+            content = form.cleaned_data['content']
+            created_at = form.cleaned_data['created_at']
+            post = m.Post.objects.create(content=content,
+                                         created_at=created_at)
+            return HttpResponseRedirect(reverse('post_detail',
+                                                kwargs={'post_id': post.id}))
+ 
+    return render(request, 'tutor4u/form_upload.html', {
+        'form': form,
+    })

@@ -1,0 +1,31 @@
+{% extends 'tutor4u/base.html' %}   
+{% block body %}
+      <form action="index.html" method="post">
+        
+      
+        <h1>My Profile</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:{{user.name}} </label>
+          
+          
+          <label for="mail">Email: {{user.email}} </label>
+          
+          <label>Gender: {{user.gender}} </label>
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography: {{user.biography}} </label>
+          <label for="major">Major: {{user.major}} </label>
+        
+        </fieldset>
+
+        <fieldset>
+            <label for="currentyear"> Current Year: {{user.currentyear}} </label>
+        </fieldset>
+      </form>
+     
+      
+ {% endblock %}

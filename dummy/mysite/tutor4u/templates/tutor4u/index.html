@@ -1,0 +1,100 @@
+{% extends 'tutor4u/base.html' %}
+{% load staticfiles %}
+{% block head %}
+<script src="{% static 'tutor4u/carousel.js' %}"></script>
+<link href="{% static 'tutor4u/carousel.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+
+  <!-- Carousel
+       ================================================== -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img class="first-slide" src="http://i.huffpost.com/gen/2491724/images/o-DUKE-UNIVERSITY-CHAPEL-facebook.jpg" alt="First slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Sign up as a tutor today!</h1>
+            <p>Help others and make money in just one click!</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'tutor4u:signup2' %}" role="button">Sign up as tutor</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img class="second-slide" src="http://speclearning.com/wp-content/uploads/2012/10/showcase_chalkboard.jpg" alt="Second slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Need help? Get it now!</h1>
+            <p>Sign up as a tutee and get help today!</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'tutor4u:signup' %}" role="button">Tutee Sign Up</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img class="third-slide" src="https://17664-presscdn-0-27-pagely.netdna-ssl.com/wp-content/uploads/how-to-pay-for-duke-university-1060x448.jpg" alt="Third slide">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Interested? Get involved!</h1>
+            <p>Know more about this awesome program.</p>
+            <p><a class="btn btn-lg btn-primary" href="{% url 'tutor4u:lv' %}" role="button">More Details</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div><!-- /.carousel -->
+
+
+  <!-- Marketing messaging and featurettes
+       ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="img-circle" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/10393916_1384747045171410_6129491026337983081_n.jpg?oh=1babbfdd12305f759700f3436d3d2381&oe=58B4F83E" width="140" height="140">
+        <h2>Tutor of the Week</h2>
+        <p>Take a look at the most popular tutors of the week!</p>
+        <p><a class="btn btn-default" href="{% url 'tutor4u:lv'%}" role="button">View full list &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="http://hjhspantherprint.com/wp-content/uploads/2015/12/Subjects.png" alt="Generic placeholder image" width="140" height="140">
+        <h2>Subjects We Offer</h2>
+        <p>Take a look at the subjects we offer tutoring.</p>
+        <p><a class="btn btn-default" href="{% url 'tutor4u:subjects'%}" role="button">View full list &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="http://s3.amazonaws.com/libapps/accounts/4192/images/lilly.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2>Best Tutoring Locations</h2>
+        <p>Take a look at a list of recommanded tutoring locations!</p>
+        <p><a class="btn btn-default" href="{% url 'tutor4u:locations'%}" role="button">View full list &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    <!-- Bootstrap core JavaScript
+	 ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+    <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+    <!-- <\!-- Just to make our placeholder images work. Don't actually copy the next line! -\-> -->
+
+    <!-- <\!-- IE10 viewport hack for Surface/desktop Windows 8 bug -\-> -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  </div>
+  {% endblock %}
+</html> 

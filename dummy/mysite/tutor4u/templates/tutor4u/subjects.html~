@@ -1,0 +1,75 @@
+{% extends 'tutor4u/base.html' %}
+
+{% block body %}
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Tutor For You</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+         <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Profile <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Information Update</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Log Out</a></li>
+                  </ul>
+            </li>
+          </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+      <form action="index.html" method="post">
+        
+        <h1> Subjects on Offer </h1>
+        <ul>
+            <li>ECE
+
+            <ul>
+            <li> ECE 110</li>
+            <li> ECE 230</li>
+            <li> ECE 250</li>
+            <li> ECE 270</li>
+            <li> ECE 280</li>
+            <li> ECE 350</li>
+            </ul>
+            </li>
+            
+            <br>
+            <li>COMPSCI
+            <ul>
+                <li> CS 101</li>
+                <li> CS 201</li>
+                <li> CS 230</li>
+                <li> CS 250</li>
+                <li> CS 308</li>
+                <li> CS 310</li>
+                <li> CS 330</li></ul></li>
+          </ul>
+ {% endblock %}       
+          
+        
+        <button type="submit">Back</button>
+      </form>
+      
+    </body>
+</html>
+    

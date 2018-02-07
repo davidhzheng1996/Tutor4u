@@ -1,0 +1,166 @@
+{% extends 'tutor4u/base.html' %}
+{% load staticfiles %}
+{% block head %}
+<title>Search Tutor</title>
+
+<link href="{% static 'tutor4u/sign2.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="navbar-wrapper">
+  <div class="container">
+    <form action="{% url 'tutor4u:signup2' %}" method="post">
+      {% csrf_token %}
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Already have an account? </span> 
+        <a class="btn btn-lg btn-primary" href="login temp.html" role="button">Log in</a>
+      </button>
+      <h1>Tutor Sign Up</h1>
+
+      <fieldset>
+        <legend><span class="number">1</span>Your basic info</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="user_email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password">
+
+        <label>Gender:</label>
+        <input type="radio" id="male" value="male" name="user_gender"><label for="male" class="light">Male</label><br>
+        <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light">Female</label><br>
+        <input type="radio" id="prefer not to answer" value="notanswer" name="user_gender"><label for="notanswer" class="light">Prefer not to answer</label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="number">2</span>Your profile</legend>
+        <label for="bio">Biography(anything you want to share with us):</label>
+        <textarea id="bio" name="user_bio"></textarea>
+        <label for="major">Major:</label>
+        <input type="text" id="major" name="user_major">
+
+      </fieldset>
+
+      <fieldset>
+        <label for="currentyear"> Current Year:</label>
+        <select id="currentyear" name = "currentyear" >
+          <optgroup label = "Undergraduate">
+            <option value="freshman" >Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+          </optgroup>
+          <optgroup label = "Graduate">
+            <option value="firstyear">First-Year</option>
+            <option value="secondyear">Second-Year</option>
+            <option value="thirdyear"> Third-Year</option>
+          </optgroup>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend><span class="number">3</span> Courses you want to tutor                     (maximum three courses)</legend>
+        <label for="option1">Option1:</label>
+        <select id = "option1" name = "option1">
+          <optgroup label = "ECE">
+            <option value="ECE 110" >ECE 110</option>
+            <option value="ECE 230" >ECE 230</option>
+            <option value="ECE 270" >ECE 270</option>
+            <option value="ECE 280" >ECE 280</option>
+            <option value="ECE 350" >ECE 350</option>
+            <option value="ECE 350" >ECE 350</option>
+          </optgroup>
+          <optgroup label = "CS">
+            <option value="CS 101" >CS 101</option>
+            <option value="CS 201" >CS 201</option>
+            <option value="CS 230" >CS 230</option>
+            <option value="CS 250" >CS 250</option>
+            <option value="CS 350" >CS 308</option>
+            <option value="CS 350" >CS 310</option>
+            <option value="CS 350" >CS 330</option>
+          </optgroup>
+        </select>
+
+        <label for = "grade1"> Grade: </label>
+        <select id = "grade1" name = "grade1">
+          <option value="A+" >A+</option>
+          <option value="A" >A</option>
+          <option value="A-" >A-</option>
+          <option value="B+" >B+</option>
+          <option value="B" >B</option>
+          <option value="B-" >B-</option>
+        </select>
+
+        <label for="option2">Option2:</label>
+        <select id = "option2" name = "option2">
+          <optgroup label = "ECE">
+            <option value="ECE 110" >ECE 110</option>
+            <option value="ECE 230" >ECE 230</option>
+            <option value="ECE 270" >ECE 270</option>
+            <option value="ECE 280" >ECE 280</option>
+            <option value="ECE 350" >ECE 350</option>
+            <option value="ECE 350" >ECE 350</option>
+          </optgroup>
+          <optgroup label = "CS">
+            <option value="CS 101" >CS 101</option>
+            <option value="CS 201" >CS 201</option>
+            <option value="CS 230" >CS 230</option>
+            <option value="CS 250" >CS 250</option>
+            <option value="CS 350" >CS 308</option>
+            <option value="CS 350" >CS 310</option>
+            <option value="CS 350" >CS 330</option>
+          </optgroup>
+        </select>
+
+        <label for = "grade2"> Grade: </label>
+        <select id = "grade2" name = "grade2">
+          <option value="A+" >A+</option>
+          <option value="A" >A</option>
+          <option value="A-" >A-</option>
+          <option value="B+" >B+</option>
+          <option value="B" >B</option>
+          <option value="B-" >B-</option>
+        </select>
+
+
+        <label for="option3">Option3:</label>
+        <select id = "option3" name = "option3">
+          <optgroup label = "ECE">
+            <option value="ECE 110" >ECE 110</option>
+            <option value="ECE 230" >ECE 230</option>
+            <option value="ECE 270" >ECE 270</option>
+            <option value="ECE 280" >ECE 280</option>
+            <option value="ECE 350" >ECE 350</option>
+            <option value="ECE 350" >ECE 350</option>
+          </optgroup>
+          <optgroup label = "CS">
+            <option value="CS 101" >CS 101</option>
+            <option value="CS 201" >CS 201</option>
+            <option value="CS 230" >CS 230</option>
+            <option value="CS 250" >CS 250</option>
+            <option value="CS 350" >CS 308</option>
+            <option value="CS 350" >CS 310</option>
+            <option value="CS 350" >CS 330</option>
+          </optgroup>
+        </select> 
+
+        <label for = "grade3"> Grade: </label>
+        <select id = "grade3" name = "grade3">
+          <option value="A+" >A+</option>
+          <option value="A" >A</option>
+          <option value="A-" >A-</option>
+          <option value="B+" >B+</option>
+          <option value="B" >B</option>
+          <option value="B-" >B-</option>
+        </select> 
+
+        
+      </fieldset>
+
+      <button type="submit">Sign Up</button>
+    </form>
+    
+    
+    {% endblock %}

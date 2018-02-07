@@ -1,0 +1,45 @@
+{% extends 'tutor4u/base.html' %}    
+{% block body %}
+<form action="index.html" method="post">
+        
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      </button>
+        <h1>Tutor Profile</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name: {{user.name}}</label>
+          
+          <label for="mail">Email: {{user.email}}</label>
+          
+          <label for = "gender">Gender: {{user.gender}}</label>
+          
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography: {{user.biography}}</label>
+          <label for="major">Major: {{user.major}}</label>
+          <label for="currentyear"> Current Year: {{user.currentyear}}</label>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="number">3</span> Courses you want to tutor                     (maximum three courses)</legend>
+          <label for="option1">Option1: {{user.course1}}</label>
+          <label for = "grade1"> Grade: {{user.grade1}} </label> 
+
+          <label for="option2">Option2: {{user.course2}}</label>
+          <label for = "grade2"> Grade: {{user.grade2}}</label>
+
+
+           <label for="option3">Option3: {{user.course3}}</label>
+           <label for = "grade3"> Grade: {{user.grade3}} </label>
+              
+          
+        </fieldset>
+
+      </form>
+     
+      
+    </body>
+{% endblock %}

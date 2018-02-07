@@ -1,0 +1,70 @@
+{% extends "tutor4u/base.html" %}
+{% load staticfiles %}
+    {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'tutor4u/sign2.css' %}">
+    {% endblock %}
+
+    {% block body %}
+
+      <form action="{% url 'tutor4u:signup' %}" method="post">
+      {% csrf_token %}
+        
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Already have an account? </span> 
+        <a class="btn btn-lg btn-primary" href="{% url 'tutor4u:user_login' %}" role="button">Log in</a>
+      </button>
+        <h1>Sign Up</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="user_name">
+          
+          <label for="mail">Email:</label>
+          <input type="email" id="mail" name="user_email">
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="user_password">
+          
+          <label>Gender:</label>
+          <input type="radio" id="male_gender" value="male" name="user_gender"><label for="male_gender" class="light">Male</label><br>
+          <input type="radio" id="female_gender" value="female" name="user_gender"><label for="female_gender" class="light">Female</label><br>
+          <input type="radio" id="prefer_not_to_answer" value="undefined" name="user_gender"><label for="prefer_not_to_answer" class="light">Prefer not to answer</label>
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your profile</legend>
+          <label for="bio">Biography(anything you want to share with us):</label>
+          <textarea id="bio" name="user_bio"></textarea>
+          <label for="major">Major:</label>
+          <input type="text" id="major" name="user_major">
+        
+        </fieldset>
+
+        <fieldset>
+            <label for="currentyear"> Current Year:</label>
+            <select id="currentyear" name = "currentyear" >
+              <optgroup label = "Undergraduate">
+                <option value="freshman" >Freshman</option>
+                <option value="sophomore">Sophomore</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
+              </optgroup>
+              <optgroup label = "Graduate">
+                <option value="firstyear">First-Year</option>
+                <option value="secondyear">Second-Year</option>
+                <option value="thirdyear"> Third-Year</option>
+              </optgroup> 
+              </select> 
+        </fieldset>
+
+        <button type="submit">Sign Up</button>
+      </form>
+     
+      
+    {% endblock %}

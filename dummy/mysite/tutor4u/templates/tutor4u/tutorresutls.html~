@@ -1,0 +1,7 @@
+
+<body>
+  {{ user.name }}<br/>
+  {{ user.email }}<br/>
+  {{ user.password }}<br/>
+  {{ user.gender }}<br/>
+</body>
